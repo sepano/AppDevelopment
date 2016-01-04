@@ -2,8 +2,8 @@
 //  BlancTests.swift
 //  BlancTests
 //
-//  Created by CHAINELS on 04/01/16.
-//  Copyright © 2016 TimCode. All rights reserved.
+//  Created by Boning Gong on 1/4/16.
+//  Copyright © 2016 Blanc Essentials. All rights reserved.
 //
 
 import XCTest

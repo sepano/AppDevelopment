@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0710"
+   LastUpgradeVersion = "0720"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "6C646D2A1C3B132700C340AD"
+               BlueprintIdentifier = "104A26F31C3B189900A70A40"
                BuildableName = "Blanc.app"
                BlueprintName = "Blanc"
                ReferencedContainer = "container:Blanc.xcodeproj">
@@ -32,19 +32,9 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "6C646D401C3B132700C340AD"
+               BlueprintIdentifier = "104A27071C3B189900A70A40"
                BuildableName = "BlancTests.xctest"
                BlueprintName = "BlancTests"
-               ReferencedContainer = "container:Blanc.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "6C646D4B1C3B132700C340AD"
-               BuildableName = "BlancUITests.xctest"
-               BlueprintName = "BlancUITests"
                ReferencedContainer = "container:Blanc.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -52,7 +42,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "6C646D2A1C3B132700C340AD"
+            BlueprintIdentifier = "104A26F31C3B189900A70A40"
             BuildableName = "Blanc.app"
             BlueprintName = "Blanc"
             ReferencedContainer = "container:Blanc.xcodeproj">
@@ -75,7 +65,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "6C646D2A1C3B132700C340AD"
+            BlueprintIdentifier = "104A26F31C3B189900A70A40"
             BuildableName = "Blanc.app"
             BlueprintName = "Blanc"
             ReferencedContainer = "container:Blanc.xcodeproj">
@@ -94,7 +84,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "6C646D2A1C3B132700C340AD"
+            BlueprintIdentifier = "104A26F31C3B189900A70A40"
             BuildableName = "Blanc.app"
             BlueprintName = "Blanc"
             ReferencedContainer = "container:Blanc.xcodeproj">
