@@ -9,18 +9,39 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
-import blanc_essentials.blanc.api.CallAPI;
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.ImageLoader;
+import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.NetworkImageView;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
+
+import org.json.JSONObject;
+
+import java.util.UUID;
+
+import blanc_essentials.blanc.api.MySingleton;
+import oauth.signpost.OAuthConsumer;
+import oauth.signpost.basic.DefaultOAuthConsumer;
+import oauth.signpost.exception.OAuthCommunicationException;
+import oauth.signpost.exception.OAuthExpectationFailedException;
+import oauth.signpost.exception.OAuthMessageSignerException;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
     public final static String strikeIronUserName = "stikeironusername@yourdomain.com";
     public final static String strikeIronPassword = "strikeironpassword";
     public final static String apiURL = "http://blanc-essentials.com/..";
+    private RequestQueue mRequestQueue;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -105,10 +126,99 @@ public class MainActivity extends AppCompatActivity
         return true;
     }
 
-    public void onClickProducts(View view){
-        TextView textView = (TextView) findViewById(R.id.textView);
-        String urlString = apiURL + "LicenseInfo.RegisteredUser.UserID=" + strikeIronUserName + "&LicenseInfo.RegisteredUser.Password=" + strikeIronPassword + "&VerifyEmail.Email=" + "&VerifyEmail.Timeout=30";
-        new CallAPI().execute(urlString);
-        textView.setText("Products");
+    public void onClickProducts(View view) {
+        final TextView textView = (TextView) findViewById(R.id.textView);
+
+        // Instantiate the RequestQueue.
+        mRequestQueue = Volley.newRequestQueue(this);
+        String url = "http://www.google.com";
+
+        // Request a string response from the provided URL.
+        StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        // Display the first 500 characters of the response string.
+                        textView.setText("Response is: " + response.substring(0, 500));
+                    }
+                }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                textView.setText("That didn't work!");
+            }
+        });
+        stringRequest.setTag(this);
+        // Add the request to the RequestQueue.
+        mRequestQueue.add(stringRequest);
+
+
+    }
+
+    public void onClickImage(View view) {
+        final String IMAGE_URL = "http://developer.android.com/images/training/system-ui.png";
+
+        // Get the NetworkImageView that will display the image.
+        NetworkImageView mNetworkImageView = (NetworkImageView) findViewById(R.id.networkImageView);
+
+        // Get the ImageLoader through your singleton class.
+        ImageLoader mImageLoader = MySingleton.getInstance(this).getImageLoader();
+
+        // Set the URL of the image that should be loaded into this view, and
+        // specify the ImageLoader that will be used to make the request.
+        mNetworkImageView.setImageUrl(IMAGE_URL, mImageLoader);
+    }
+
+    public void apiCall(View view) {
+        String baseUrl = "http://www.blanc-essentials.com/app/wc-api/v3";
+        String urlQuestion = "/oauth/request_token";
+        String consumerKey = "oauth_consumer_key=ck_d84bd1cd3bd1bbd03c93df3a240118d53cc724e5";
+        String consumerSecret = "oauth_consumer_secret=cs_c47d4ee3b89be937805f33b76d6a4d33e90fc29c";
+        String signatureMethod = "oauth_signature_method=HMAC-SHA1";
+        String nonce = "oauth_nonce=" + UUID.randomUUID().toString();
+        long unixTime = System.currentTimeMillis() / 1000L;
+        String timeStamp = "oauth_timestamp=" + Long.toString(unixTime);
+
+        OAuthConsumer consumer = new DefaultOAuthConsumer(consumerKey,consumerSecret);
+        //consumer.setTokenWithSecret("", "");
+
+
+        String url = baseUrl + urlQuestion + "?" + consumerKey + "&" + consumerSecret + "&" + signatureMethod + "&" + nonce + "&" + timeStamp;
+        final TextView textView = (TextView) findViewById(R.id.textView2);
+        JsonObjectRequest jsObjRequest = new JsonObjectRequest(Request.Method.POST, url, new Response.Listener<JSONObject>() {
+
+            @Override
+            public void onResponse(JSONObject response) {
+                Log.d("test", "response: " + response.toString());
+                textView.setText("Response: " + response.toString());
+            }
+        }, new Response.ErrorListener() {
+
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                // TODO Auto-generated method stub
+
+            }
+        });
+
+        try {
+            consumer.sign(jsObjRequest);
+            MySingleton.getInstance(this).addToRequestQueue(jsObjRequest);
+        } catch (OAuthMessageSignerException e) {
+            e.printStackTrace();
+        } catch (OAuthExpectationFailedException e) {
+            e.printStackTrace();
+        } catch (OAuthCommunicationException e) {
+            e.printStackTrace();
+        }
+
+
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        if (mRequestQueue != null) {
+            mRequestQueue.cancelAll(this);
+        }
     }
 }

@@ -29,6 +29,24 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="apiCall"
+            android:text="Show products" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <com.android.volley.toolbox.NetworkImageView
+            android:id="@+id/networkImageView"
+            android:background="@android:color/darker_gray"
+            android:layout_width="150dp"
+            android:layout_height="170dp"
+            android:layout_centerHorizontal="true"/>
+
 
     </LinearLayout>
 </RelativeLayout>
