@@ -1,5 +1,6 @@
 package blanc_essentials.blanc;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
@@ -29,6 +30,7 @@ import org.json.JSONObject;
 
 import java.util.UUID;
 
+import blanc_essentials.blanc.activity.ProductsActivity;
 import blanc_essentials.blanc.api.MySingleton;
 import oauth.signpost.OAuthConsumer;
 import oauth.signpost.basic.DefaultOAuthConsumer;
@@ -42,13 +44,15 @@ public class MainActivity extends AppCompatActivity
     public final static String strikeIronPassword = "strikeironpassword";
     public final static String apiURL = "http://blanc-essentials.com/..";
     private RequestQueue mRequestQueue;
+    private Toolbar mToolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+
+        mToolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(mToolbar);
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -61,7 +65,7 @@ public class MainActivity extends AppCompatActivity
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+                this, drawer, mToolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.setDrawerListener(toggle);
         toggle.syncState();
 
@@ -107,18 +111,11 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
+        if (id == R.id.nav_gallery) {
             // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
-
-        } else if (id == R.id.nav_slideshow) {
-
-        } else if (id == R.id.nav_manage) {
-
-        } else if (id == R.id.nav_share) {
-
-        } else if (id == R.id.nav_send) {
-
+        } else if (id == R.id.nav_products) {
+            Intent intent = new Intent(this, ProductsActivity.class);
+            startActivity(intent);
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -181,7 +178,6 @@ public class MainActivity extends AppCompatActivity
         OAuthConsumer consumer = new DefaultOAuthConsumer(consumerKey,consumerSecret);
         //consumer.setTokenWithSecret("", "");
 
-
         String url = baseUrl + urlQuestion + "?" + consumerKey + "&" + consumerSecret + "&" + signatureMethod + "&" + nonce + "&" + timeStamp;
         final TextView textView = (TextView) findViewById(R.id.textView2);
         JsonObjectRequest jsObjRequest = new JsonObjectRequest(Request.Method.POST, url, new Response.Listener<JSONObject>() {
@@ -210,7 +206,6 @@ public class MainActivity extends AppCompatActivity
         } catch (OAuthCommunicationException e) {
             e.printStackTrace();
         }
-
 
     }
 
