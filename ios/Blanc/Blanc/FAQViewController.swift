@@ -10,8 +10,13 @@ import Foundation
 
 class FAQViewController : UIViewController {
     
+    @IBOutlet weak var Menu: UIBarButtonItem!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        Menu.target = self.revealViewController()
+        Menu.action = Selector("revealToggle:")
         
         self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         
