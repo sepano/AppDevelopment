@@ -9,6 +9,8 @@
 import UIKit
 
 class MenuTableTableViewController: UITableViewController {
+    
+    let menuOptions = ["Home", "Products", "My Account", "Contact", "FAQ"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,23 +31,21 @@ class MenuTableTableViewController: UITableViewController {
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return menuOptions.count
     }
 
-    /*
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
-
-        // Configure the cell...
-
-        return cell
+            let cell = tableView.dequeueReusableCellWithIdentifier(menuOptions[indexPath.row], forIndexPath: indexPath)
+        
+            cell.textLabel?.text = menuOptions[indexPath.row]
+        
+            return cell
     }
-    */
 
     /*
     // Override to support conditional editing of the table view.

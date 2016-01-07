@@ -16,6 +16,10 @@
 		1067720E1C3D744000867E87 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1067720D1C3D744000867E87 /* SWRevealViewController.m */; };
 		106772161C3D806300867E87 /* MenuTableTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106772151C3D806300867E87 /* MenuTableTableViewController.swift */; };
 		1082CC461C3E59EE00FB4D01 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1082CC451C3E59EE00FB4D01 /* Product.swift */; };
+		1082CC4B1C3E7BD100FB4D01 /* ProductsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1082CC4A1C3E7BD100FB4D01 /* ProductsViewController.swift */; };
+		1082CC4D1C3E7BE600FB4D01 /* MyAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1082CC4C1C3E7BE600FB4D01 /* MyAccountViewController.swift */; };
+		1082CC4F1C3E7C1300FB4D01 /* ContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1082CC4E1C3E7C1300FB4D01 /* ContactViewController.swift */; };
+		1082CC511C3E7C2000FB4D01 /* FAQViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1082CC501C3E7C2000FB4D01 /* FAQViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +48,10 @@
 		1067720D1C3D744000867E87 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SWRevealViewController.m; path = "../../../../Downloads/SWRevealViewController-master/SWRevealViewController/SWRevealViewController.m"; sourceTree = "<group>"; };
 		106772151C3D806300867E87 /* MenuTableTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTableTableViewController.swift; sourceTree = "<group>"; };
 		1082CC451C3E59EE00FB4D01 /* Product.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		1082CC4A1C3E7BD100FB4D01 /* ProductsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductsViewController.swift; sourceTree = "<group>"; };
+		1082CC4C1C3E7BE600FB4D01 /* MyAccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyAccountViewController.swift; sourceTree = "<group>"; };
+		1082CC4E1C3E7C1300FB4D01 /* ContactViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactViewController.swift; sourceTree = "<group>"; };
+		1082CC501C3E7C2000FB4D01 /* FAQViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FAQViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +93,7 @@
 		104A26F61C3B189900A70A40 /* Blanc */ = {
 			isa = PBXGroup;
 			children = (
+				1082CC491C3E7BB000FB4D01 /* Screens */,
 				1082CC471C3E6A7600FB4D01 /* Images */,
 				1082CC441C3E59DA00FB4D01 /* Objects */,
 				1067720A1C3D740C00867E87 /* SWRevealViewController */,
@@ -139,6 +148,17 @@
 			children = (
 			);
 			name = Icons;
+			sourceTree = "<group>";
+		};
+		1082CC491C3E7BB000FB4D01 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				1082CC4A1C3E7BD100FB4D01 /* ProductsViewController.swift */,
+				1082CC4C1C3E7BE600FB4D01 /* MyAccountViewController.swift */,
+				1082CC4E1C3E7C1300FB4D01 /* ContactViewController.swift */,
+				1082CC501C3E7C2000FB4D01 /* FAQViewController.swift */,
+			);
+			name = Screens;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -245,8 +265,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				104A26FA1C3B189900A70A40 /* ViewController.swift in Sources */,
+				1082CC4F1C3E7C1300FB4D01 /* ContactViewController.swift in Sources */,
 				106772161C3D806300867E87 /* MenuTableTableViewController.swift in Sources */,
 				1082CC461C3E59EE00FB4D01 /* Product.swift in Sources */,
+				1082CC4D1C3E7BE600FB4D01 /* MyAccountViewController.swift in Sources */,
+				1082CC4B1C3E7BD100FB4D01 /* ProductsViewController.swift in Sources */,
+				1082CC511C3E7C2000FB4D01 /* FAQViewController.swift in Sources */,
 				104A26F81C3B189900A70A40 /* AppDelegate.swift in Sources */,
 				1067720E1C3D744000867E87 /* SWRevealViewController.m in Sources */,
 			);
