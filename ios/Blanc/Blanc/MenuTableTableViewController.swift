@@ -10,7 +10,7 @@ import UIKit
 
 class MenuTableTableViewController: UITableViewController {
     
-    let menuOptions = ["Home", "Products", "My Account", "Contact", "FAQ"]
+    let menuOptions = ["SpacingCell", "Home", "Products", "My Account", "Contact", "FAQ"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,13 +38,27 @@ class MenuTableTableViewController: UITableViewController {
         // #warning Incomplete implementation, return the number of rows
         return menuOptions.count
     }
+    
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        if (indexPath.row == 0) {
+            return 200
+        }
+        else {
+            return 40
+        }
+    }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-            let cell = tableView.dequeueReusableCellWithIdentifier(menuOptions[indexPath.row], forIndexPath: indexPath)
+        let cell = tableView.dequeueReusableCellWithIdentifier(menuOptions[indexPath.row], forIndexPath: indexPath)
         
+        if(indexPath.row != 0) {
             cell.textLabel?.text = menuOptions[indexPath.row]
-        
-            return cell
+        }
+        else{
+            cell.textLabel?.text = ""
+            cell.selectionStyle = UITableViewCellSelectionStyle.None;
+        }
+        return cell
     }
 
     /*
