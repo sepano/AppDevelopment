@@ -20,19 +20,35 @@ class ProductsViewController : UIViewController {
     @IBOutlet weak var infoButton: UIButton!
     @IBOutlet weak var addItemButton: UIButton!
     
-    var testItem = Product(name:"T-Shirt", id:1, imageUrls:["tshirt1.jpg", "tshirt2.jpg", "tshirt3.jpg"], normalPrice:25.00, salePrice:14.99, sale:false)
-    var curImageIndex = 1
+    var products:[Product] = allProducts().getAllProducts();
+    var curItemIndex = 0
+    var curImageIndex = 0
+    
+    // Show other products on the right or left
+    @IBAction func rightSwipe(sender: AnyObject) {
+        ++curItemIndex
+        if (curItemIndex >= products.count ) {
+            curItemIndex = products.count - 1
+        }
+        reloadProductInformation()
+    }
+    @IBAction func leftSwipe(sender: AnyObject) {
+        --curItemIndex
+        if (curItemIndex < 0 ) {
+            curItemIndex = 0
+        }
+        reloadProductInformation()
+    }
 
     // Show higher standing image
     @IBAction func upSwipe(sender: AnyObject) {
         ++curImageIndex
-        if( curImageIndex >= testItem.getImageUrls().count ) {
-            curImageIndex = testItem.getImageUrls().count - 1
+        if( curImageIndex >= products[curItemIndex].getImageUrls().count ) {
+            curImageIndex = products[curItemIndex].getImageUrls().count - 1
         }
         
-        imageView.image = UIImage(named: testItem.getImageUrls()[curImageIndex])
+        imageView.image = UIImage(named: products[curItemIndex].getImageUrls()[curImageIndex])
     }
-    
     // Show lower standing image
     @IBAction func downSwipe(sender: AnyObject) {
         --curImageIndex
@@ -40,7 +56,7 @@ class ProductsViewController : UIViewController {
             curImageIndex = 0
         }
         
-        imageView.image = UIImage(named: testItem.getImageUrls()[curImageIndex])
+        imageView.image = UIImage(named: products[curItemIndex].getImageUrls()[curImageIndex])
     }
     
     override func viewDidLoad() {
@@ -58,25 +74,28 @@ class ProductsViewController : UIViewController {
         infoButton.layer.borderColor = UIColor.lightGrayColor().CGColor
         
         // Option to swipe open the navigation menu
-        self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+        //self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         
-        // Adding all information from an product
-        imageView.image = UIImage(named: testItem.getImageUrls()[curImageIndex])
+        // Adding all information from the initial product
+        reloadProductInformation()
+    }
+    
+    func reloadProductInformation() {
+        self.title = products[curItemIndex].getName()
+        imageView.image = UIImage(named: products[curItemIndex].getImageUrls()[curImageIndex])
         
-        if( testItem.getOnSale() ) {
-            let normalPrice:String = String(format:"%.2f", testItem.getNormalPrice())
-            let salePrice:String = String(format:"%.2f", testItem.getSalePrice())
+        if( products[curItemIndex].getOnSale() ) {
+            let normalPrice:String = String(format:"%.2f", products[curItemIndex].getNormalPrice())
+            let salePrice:String = String(format:"%.2f", products[curItemIndex].getSalePrice())
             let attributeString: NSMutableAttributedString =  NSMutableAttributedString(string:"€" + normalPrice)
             attributeString.addAttribute(NSStrikethroughStyleAttributeName, value: 1, range: NSMakeRange(0, attributeString.length))
             productNormalPrice.attributedText = attributeString
             productSalePrice.text = "€" + salePrice
         }
         else {
-            let normalPrice:String = String(format:"%.2f", testItem.getNormalPrice())
+            let normalPrice:String = String(format:"%.2f", products[curItemIndex].getNormalPrice())
             productNormalPrice.text = "€" + normalPrice
             productSalePrice.text = nil
         }
-        
-        
     }
 }

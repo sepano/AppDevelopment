@@ -20,9 +20,18 @@
 		1082CC4F1C3E7C1300FB4D01 /* ContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1082CC4E1C3E7C1300FB4D01 /* ContactViewController.swift */; };
 		1082CC511C3E7C2000FB4D01 /* FAQViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1082CC501C3E7C2000FB4D01 /* FAQViewController.swift */; };
 		109BBCAB1C4048B6001DDAF1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 109BBCA91C4048B6001DDAF1 /* Main.storyboard */; };
-		109BBCAF1C4067E5001DDAF1 /* tshirt1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 109BBCAC1C4067E5001DDAF1 /* tshirt1.jpg */; };
-		109BBCB01C4067E5001DDAF1 /* tshirt2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 109BBCAD1C4067E5001DDAF1 /* tshirt2.jpg */; };
-		109BBCB11C4067E5001DDAF1 /* tshirt3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 109BBCAE1C4067E5001DDAF1 /* tshirt3.jpg */; };
+		10B9081D1C41098E00850070 /* allProducts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B9081C1C41098E00850070 /* allProducts.swift */; };
+		10B908291C410A6000850070 /* blazer1v0.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 10B9081E1C410A6000850070 /* blazer1v0.jpg */; };
+		10B9082A1C410A6000850070 /* blazer1v1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 10B9081F1C410A6000850070 /* blazer1v1.jpg */; };
+		10B9082B1C410A6000850070 /* blazer1v2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 10B908201C410A6000850070 /* blazer1v2.jpg */; };
+		10B9082C1C410A6000850070 /* blazer1v3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 10B908211C410A6000850070 /* blazer1v3.jpg */; };
+		10B9082D1C410A6000850070 /* tshirt1v0.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 10B908221C410A6000850070 /* tshirt1v0.jpg */; };
+		10B9082E1C410A6000850070 /* tshirt1v1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 10B908231C410A6000850070 /* tshirt1v1.jpg */; };
+		10B9082F1C410A6000850070 /* tshirt1v2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 10B908241C410A6000850070 /* tshirt1v2.jpg */; };
+		10B908301C410A6000850070 /* vest1v0.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 10B908251C410A6000850070 /* vest1v0.jpg */; };
+		10B908311C410A6000850070 /* vest1v1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 10B908261C410A6000850070 /* vest1v1.jpg */; };
+		10B908321C410A6000850070 /* vest1v2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 10B908271C410A6000850070 /* vest1v2.jpg */; };
+		10B908331C410A6000850070 /* vest1v3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 10B908281C410A6000850070 /* vest1v3.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,9 +64,18 @@
 		1082CC4E1C3E7C1300FB4D01 /* ContactViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactViewController.swift; sourceTree = "<group>"; };
 		1082CC501C3E7C2000FB4D01 /* FAQViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FAQViewController.swift; sourceTree = "<group>"; };
 		109BBCAA1C4048B6001DDAF1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		109BBCAC1C4067E5001DDAF1 /* tshirt1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = tshirt1.jpg; path = ImageSource/tshirt1.jpg; sourceTree = "<group>"; };
-		109BBCAD1C4067E5001DDAF1 /* tshirt2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = tshirt2.jpg; path = ImageSource/tshirt2.jpg; sourceTree = "<group>"; };
-		109BBCAE1C4067E5001DDAF1 /* tshirt3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = tshirt3.jpg; path = ImageSource/tshirt3.jpg; sourceTree = "<group>"; };
+		10B9081C1C41098E00850070 /* allProducts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = allProducts.swift; sourceTree = "<group>"; };
+		10B9081E1C410A6000850070 /* blazer1v0.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = blazer1v0.jpg; path = ImageSource/blazer1v0.jpg; sourceTree = "<group>"; };
+		10B9081F1C410A6000850070 /* blazer1v1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = blazer1v1.jpg; path = ImageSource/blazer1v1.jpg; sourceTree = "<group>"; };
+		10B908201C410A6000850070 /* blazer1v2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = blazer1v2.jpg; path = ImageSource/blazer1v2.jpg; sourceTree = "<group>"; };
+		10B908211C410A6000850070 /* blazer1v3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = blazer1v3.jpg; path = ImageSource/blazer1v3.jpg; sourceTree = "<group>"; };
+		10B908221C410A6000850070 /* tshirt1v0.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = tshirt1v0.jpg; path = ImageSource/tshirt1v0.jpg; sourceTree = "<group>"; };
+		10B908231C410A6000850070 /* tshirt1v1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = tshirt1v1.jpg; path = ImageSource/tshirt1v1.jpg; sourceTree = "<group>"; };
+		10B908241C410A6000850070 /* tshirt1v2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = tshirt1v2.jpg; path = ImageSource/tshirt1v2.jpg; sourceTree = "<group>"; };
+		10B908251C410A6000850070 /* vest1v0.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = vest1v0.jpg; path = ImageSource/vest1v0.jpg; sourceTree = "<group>"; };
+		10B908261C410A6000850070 /* vest1v1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = vest1v1.jpg; path = ImageSource/vest1v1.jpg; sourceTree = "<group>"; };
+		10B908271C410A6000850070 /* vest1v2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = vest1v2.jpg; path = ImageSource/vest1v2.jpg; sourceTree = "<group>"; };
+		10B908281C410A6000850070 /* vest1v3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = vest1v3.jpg; path = ImageSource/vest1v3.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +117,7 @@
 		104A26F61C3B189900A70A40 /* Blanc */ = {
 			isa = PBXGroup;
 			children = (
+				10B9081B1C41096700850070 /* Data */,
 				1082CC491C3E7BB000FB4D01 /* Screens */,
 				1082CC471C3E6A7600FB4D01 /* Images */,
 				1082CC441C3E59DA00FB4D01 /* Objects */,
@@ -135,9 +154,17 @@
 		106901AB1C3F05680006923B /* Shirts */ = {
 			isa = PBXGroup;
 			children = (
-				109BBCAC1C4067E5001DDAF1 /* tshirt1.jpg */,
-				109BBCAD1C4067E5001DDAF1 /* tshirt2.jpg */,
-				109BBCAE1C4067E5001DDAF1 /* tshirt3.jpg */,
+				10B9081E1C410A6000850070 /* blazer1v0.jpg */,
+				10B9081F1C410A6000850070 /* blazer1v1.jpg */,
+				10B908201C410A6000850070 /* blazer1v2.jpg */,
+				10B908211C410A6000850070 /* blazer1v3.jpg */,
+				10B908221C410A6000850070 /* tshirt1v0.jpg */,
+				10B908231C410A6000850070 /* tshirt1v1.jpg */,
+				10B908241C410A6000850070 /* tshirt1v2.jpg */,
+				10B908251C410A6000850070 /* vest1v0.jpg */,
+				10B908261C410A6000850070 /* vest1v1.jpg */,
+				10B908271C410A6000850070 /* vest1v2.jpg */,
+				10B908281C410A6000850070 /* vest1v3.jpg */,
 			);
 			name = Shirts;
 			sourceTree = "<group>";
@@ -176,6 +203,14 @@
 				106772151C3D806300867E87 /* MenuTableTableViewController.swift */,
 			);
 			name = Screens;
+			sourceTree = "<group>";
+		};
+		10B9081B1C41096700850070 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				10B9081C1C41098E00850070 /* allProducts.swift */,
+			);
+			name = Data;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -261,12 +296,20 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				10B9082A1C410A6000850070 /* blazer1v1.jpg in Resources */,
+				10B9082D1C410A6000850070 /* tshirt1v0.jpg in Resources */,
+				10B908331C410A6000850070 /* vest1v3.jpg in Resources */,
+				10B908301C410A6000850070 /* vest1v0.jpg in Resources */,
+				10B9082E1C410A6000850070 /* tshirt1v1.jpg in Resources */,
+				10B9082B1C410A6000850070 /* blazer1v2.jpg in Resources */,
+				10B9082C1C410A6000850070 /* blazer1v3.jpg in Resources */,
+				10B9082F1C410A6000850070 /* tshirt1v2.jpg in Resources */,
 				104A27021C3B189900A70A40 /* LaunchScreen.storyboard in Resources */,
-				109BBCAF1C4067E5001DDAF1 /* tshirt1.jpg in Resources */,
+				10B908311C410A6000850070 /* vest1v1.jpg in Resources */,
+				10B908321C410A6000850070 /* vest1v2.jpg in Resources */,
 				104A26FF1C3B189900A70A40 /* Assets.xcassets in Resources */,
-				109BBCB11C4067E5001DDAF1 /* tshirt3.jpg in Resources */,
 				109BBCAB1C4048B6001DDAF1 /* Main.storyboard in Resources */,
-				109BBCB01C4067E5001DDAF1 /* tshirt2.jpg in Resources */,
+				10B908291C410A6000850070 /* blazer1v0.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -285,6 +328,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				104A26FA1C3B189900A70A40 /* ViewController.swift in Sources */,
+				10B9081D1C41098E00850070 /* allProducts.swift in Sources */,
 				1082CC4F1C3E7C1300FB4D01 /* ContactViewController.swift in Sources */,
 				106772161C3D806300867E87 /* MenuTableTableViewController.swift in Sources */,
 				1082CC461C3E59EE00FB4D01 /* Product.swift in Sources */,

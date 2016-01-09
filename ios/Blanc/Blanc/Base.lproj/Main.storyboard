@@ -43,7 +43,7 @@
             </objects>
             <point key="canvasLocation" x="1458" y="1026"/>
         </scene>
-        <!--Products-->
+        <!--Products View Controller-->
         <scene sceneID="pmT-7p-2hA">
             <objects>
                 <viewController id="SEw-TL-MKc" customClass="ProductsViewController" customModule="Blanc" customModuleProvider="target" sceneMemberID="viewController">
@@ -73,12 +73,14 @@
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="39h-zY-2TW" appends="YES" id="Uyd-XA-kg3"/>
                                     <outletCollection property="gestureRecognizers" destination="Z3e-nU-UFa" appends="YES" id="Nt8-zB-pC6"/>
+                                    <outletCollection property="gestureRecognizers" destination="N0b-Wp-gdA" appends="YES" id="OLm-rE-0dD"/>
+                                    <outletCollection property="gestureRecognizers" destination="WSX-KH-ohG" appends="YES" id="bWZ-h6-DRe"/>
                                 </connections>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4YV-Kv-7k2">
                                 <rect key="frame" x="538" y="572" width="42" height="16"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uAW-Qk-5ZC">
@@ -99,7 +101,7 @@
                                 </constraints>
                                 <inset key="titleEdgeInsets" minX="25" minY="0.0" maxX="25" maxY="0.0"/>
                                 <state key="normal" title="Toevoegen">
-                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a7T-hJ-ZZI">
@@ -133,7 +135,7 @@
                             <constraint firstItem="uAW-Qk-5ZC" firstAttribute="leading" secondItem="4YV-Kv-7k2" secondAttribute="leading" id="xnU-E2-DWx"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Products" id="JJH-fI-HNq">
+                    <navigationItem key="navigationItem" id="JJH-fI-HNq">
                         <barButtonItem key="leftBarButtonItem" title="Menu" id="4Ty-mQ-yMz"/>
                     </navigationItem>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
@@ -156,6 +158,16 @@
                 <swipeGestureRecognizer direction="down" id="Z3e-nU-UFa">
                     <connections>
                         <action selector="downSwipe:" destination="SEw-TL-MKc" id="0JI-Ks-3ko"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="right" id="N0b-Wp-gdA">
+                    <connections>
+                        <action selector="rightSwipe:" destination="SEw-TL-MKc" id="XDu-62-nhG"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="left" id="WSX-KH-ohG">
+                    <connections>
+                        <action selector="leftSwipe:" destination="SEw-TL-MKc" id="e7Y-oi-oTJ"/>
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
