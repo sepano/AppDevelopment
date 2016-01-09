@@ -37,15 +37,19 @@ class ProductOverviewTableViewController : UITableViewController {
         return products.count
     }
     
-    /*
-    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        if (indexPath.row == 0) {
-            return 200
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "showProductDetail" {
+            if let indexPath = tableView.indexPathForSelectedRow {
+                let destinationController = segue.destinationViewController as! ProductDetailViewController
+                destinationController.curItemIndex = indexPath.row
+                destinationController.productName = products[indexPath.row].getName()
+                destinationController.imageURL = products[indexPath.row].getImageUrls()[0]
+                destinationController.productNormalPriceDouble = products[indexPath.row].getNormalPrice()
+                destinationController.productSalePriceDouble = products[indexPath.row].getSalePrice()
+                destinationController.isOnSale = products[indexPath.row].getOnSale()
+            }
         }
-        else {
-            return 40
-        }
-    }*/
+    }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
 

@@ -10,12 +10,15 @@ import Foundation
 
 class ProductDetailViewController : UIViewController {
     
-    @IBOutlet weak var Menu: UIBarButtonItem!
-    
+    var productName = ""
     @IBOutlet weak var imageView: UIImageView!
+    var imageURL = ""
     
     @IBOutlet weak var productNormalPrice: UILabel!
     @IBOutlet weak var productSalePrice: UILabel!
+    var productNormalPriceDouble = 0.0
+    var productSalePriceDouble = 0.0
+    var isOnSale = false
     
     @IBOutlet weak var infoButton: UIButton!
     @IBOutlet weak var addItemButton: UIButton!
@@ -64,9 +67,6 @@ class ProductDetailViewController : UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        Menu.target = self.revealViewController()
-        Menu.action = Selector("revealToggle:")
-        
         // Styling the buttons
         addItemButton.layer.cornerRadius = 2;
         addItemButton.layer.borderWidth = 0.5;
@@ -75,13 +75,26 @@ class ProductDetailViewController : UIViewController {
         infoButton.layer.borderWidth = 0.5;
         infoButton.layer.borderColor = UIColor.lightGrayColor().CGColor
         
-        // Option to swipe open the navigation menu
-        //self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+        // Adding all information from the clicked product
+        self.title = productName
+        imageView.image = UIImage(named: imageURL)
         
-        // Adding all information from the initial product
-        reloadProductInformation()
+        if( isOnSale ) {
+            let normalPrice:String = String(format:"%.2f", productNormalPriceDouble)
+            let salePrice:String = String(format:"%.2f", productSalePriceDouble)
+            let attributeString: NSMutableAttributedString =  NSMutableAttributedString(string:"€" + normalPrice)
+            attributeString.addAttribute(NSStrikethroughStyleAttributeName, value: 1, range: NSMakeRange(0, attributeString.length))
+            productNormalPrice.attributedText = attributeString
+            productSalePrice.text = "€" + salePrice
+        }
+        else {
+            let normalPrice:String = String(format:"%.2f", productNormalPriceDouble)
+            productNormalPrice.text = "€" + normalPrice
+            productSalePrice.text = nil
+        }
     }
     
+    // Reload a prodcut for the UI
     func reloadProductInformation() {
         self.title = products[curItemIndex].getName()
         imageView.image = UIImage(named: products[curItemIndex].getImageUrls()[curImageIndex])
