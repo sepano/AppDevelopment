@@ -30,17 +30,21 @@ class ProductDetailViewController : UIViewController {
     // Show other products on the right or left
     @IBAction func rightSwipe(sender: AnyObject) {
         --curItemIndex
-        curImageIndex = 0
         if (curItemIndex < 0 ) {
             curItemIndex = 0
+        }
+        else {
+            curImageIndex = 0
         }
         reloadProductInformation()
     }
     @IBAction func leftSwipe(sender: AnyObject) {
         ++curItemIndex
-        curImageIndex = 0
         if (curItemIndex >= products.count ) {
             curItemIndex = products.count - 1
+        }
+        else {
+            curImageIndex = 0
         }
         reloadProductInformation()
     }
