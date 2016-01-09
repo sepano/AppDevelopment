@@ -1,5 +1,5 @@
 //
-//  Products.swift
+//  ProductDetailViewController.swift
 //  Blanc
 //
 //  Created by Boning Gong on 1/7/16.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-class ProductsViewController : UIViewController {
+class ProductDetailViewController : UIViewController {
     
     @IBOutlet weak var Menu: UIBarButtonItem!
     
@@ -27,6 +27,7 @@ class ProductsViewController : UIViewController {
     // Show other products on the right or left
     @IBAction func rightSwipe(sender: AnyObject) {
         ++curItemIndex
+        curImageIndex = 0
         if (curItemIndex >= products.count ) {
             curItemIndex = products.count - 1
         }
@@ -34,6 +35,7 @@ class ProductsViewController : UIViewController {
     }
     @IBAction func leftSwipe(sender: AnyObject) {
         --curItemIndex
+        curImageIndex = 0
         if (curItemIndex < 0 ) {
             curItemIndex = 0
         }

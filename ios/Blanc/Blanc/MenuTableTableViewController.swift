@@ -10,7 +10,7 @@ import UIKit
 
 class MenuTableTableViewController: UITableViewController {
     
-    let menuOptions = ["SpacingCell", "Home", "Products", "My Account", "Contact", "FAQ"]
+    let menuOptions = ["SpacingCell", "Home", "Product detail", "Product overview", "My Account", "FAQ"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
