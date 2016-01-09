@@ -29,18 +29,18 @@ class ProductDetailViewController : UIViewController {
     
     // Show other products on the right or left
     @IBAction func rightSwipe(sender: AnyObject) {
-        ++curItemIndex
-        curImageIndex = 0
-        if (curItemIndex >= products.count ) {
-            curItemIndex = products.count - 1
-        }
-        reloadProductInformation()
-    }
-    @IBAction func leftSwipe(sender: AnyObject) {
         --curItemIndex
         curImageIndex = 0
         if (curItemIndex < 0 ) {
             curItemIndex = 0
+        }
+        reloadProductInformation()
+    }
+    @IBAction func leftSwipe(sender: AnyObject) {
+        ++curItemIndex
+        curImageIndex = 0
+        if (curItemIndex >= products.count ) {
+            curItemIndex = products.count - 1
         }
         reloadProductInformation()
     }
@@ -51,7 +51,6 @@ class ProductDetailViewController : UIViewController {
         if( curImageIndex >= products[curItemIndex].getImageUrls().count ) {
             curImageIndex = products[curItemIndex].getImageUrls().count - 1
         }
-        
         imageView.image = UIImage(named: products[curItemIndex].getImageUrls()[curImageIndex])
     }
     // Show lower standing image
@@ -60,7 +59,6 @@ class ProductDetailViewController : UIViewController {
         if( curImageIndex < 0 ) {
             curImageIndex = 0
         }
-        
         imageView.image = UIImage(named: products[curItemIndex].getImageUrls()[curImageIndex])
     }
     
